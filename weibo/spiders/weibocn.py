@@ -3,7 +3,7 @@ from scrapy import Request, Spider
 from weibo.items import *
 
 
-class WeiboSpider(Spider):
+class WeiboSpider(Spider):  
     name = 'weibocn'
     
     allowed_domains = ['m.weibo.cn']
@@ -137,3 +137,5 @@ class WeiboSpider(Spider):
             page = response.meta.get('page') + 1
             yield Request(self.weibo_url.format(uid=uid, page=page), callback=self.parse_weibos,
                           meta={'uid': uid, 'page': page}) 
+            
+            
