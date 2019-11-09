@@ -136,4 +136,4 @@ class WeiboSpider(Spider):
             uid = response.meta.get('uid')
             page = response.meta.get('page') + 1
             yield Request(self.weibo_url.format(uid=uid, page=page), callback=self.parse_weibos,
-                          meta={'uid': uid, 'page': page})
+                          meta={'uid': uid, 'page': page}) 
